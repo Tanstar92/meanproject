@@ -10,12 +10,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>      
-<script src="index.js"> </script>  
+<script src="js/index.js"> </script>  
 
-<link rel="stylesheet" href="design.css" />
+<link rel="stylesheet" href="css/design.css" />
 
 
-<body>
+<body ng-app="my_first_app" ng-controller="my_first_controller">
    <!-- Menubar -->
    <div class="aboutsection" id="#about">
     <!-- Menubar -->
@@ -27,9 +27,9 @@
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="index.html#about">About</a>
             
-            <a class="nav-link" href="login.html">Login</a>
-            <a class="nav-link" href="login.html#register">Register</a>
-            <a class="nav-link" href="dtnpg.html">Donate</a>
+            <a class="nav-link" href ng-if="isUserLogged" ng-click="onLogout();">Logout</a>
+            <a class="nav-link" href="login.html"  ng-if="!isUserLogged">Login</a>
+            <a class="nav-link" href="register.html"  ng-if="!isUserLogged">Register</a>
           </div>
         </div>
        </div>
@@ -39,22 +39,20 @@
       <div class="container">
         <div id="intro">
           <h3 class="introWhite mb-3"
-            > Lorem Ipsum
-            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-            "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-            </h3>
+            > Welcome to Home Page
+             </h3>
               <!-- About Company -->
-             <p> 
+             <!-- <p> 
                What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
+            </p> -->
             <!-- Donation Link -->
-            <div class="text-center mt-5">
+            <!-- <div class="text-center mt-5">
             <a href="dtnpg.html" class="btn btn-danger" target="_blank"
             >DONATE NOW</a>
-           </div>
+           </div> -->
 
-    <!-- file change -->
+   
 
 </body>
     
