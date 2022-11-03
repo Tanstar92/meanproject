@@ -14,13 +14,13 @@ my_app.controller("my_first_controller", function($scope,$http) {
             }
         }else{
             if(!window.location.href.includes("login.html") && !window.location.href.includes("register.html")){
-                window.location = "/login.html"
+               // window.location = "/login.html"
             }
         }
     }
 
 
-
+//login page is here
     $scope.email = "";
     $scope.password = "";
     $scope.isUserLogged = false;
@@ -35,16 +35,20 @@ my_app.controller("my_first_controller", function($scope,$http) {
                     return;
                 }
                 $scope.isUserLogged = true;
+                alert("Login successfully")
                 localStorage.setItem("login",JSON.stringify(response.data.result));
                 window.location = "/index.html"
+             },function(error){
+                alert("login Failed");
+                console.log(error);
             });
     }
-
+//logout function is here
     $scope.onLogout = () => {
         localStorage.removeItem("login");
         window.location = "/login.html"
     }
-
+// this code is for registration
     $scope.onRegister = (email,password) => {
         $http.post("http://localhost:3000/createAccount",JSON.stringify({
             "email": email,
@@ -55,10 +59,13 @@ my_app.controller("my_first_controller", function($scope,$http) {
                     alert(response.data.result);
                     return;
                 }
+                alert("Registration successful");
                 $scope.isUserLogged = true;
                 localStorage.setItem("login",JSON.stringify(response.data.result));
+                
                 window.location = "/index.html"
             },function(error){
+                alert("Registration Failed");
                 console.log(error);
             });
     }

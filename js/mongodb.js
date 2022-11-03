@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://mongoroot:1955@cluster0.rae7squ.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:false});
+mongoose.connect('mongodb://localhost:27017/tanica',{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:false});
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
