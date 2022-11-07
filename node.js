@@ -54,7 +54,7 @@ async function createUserAccount(req, res) {
 	try {
 		await user.save(req.body);
 		console.log('saved to database');
-    res.send({success: true,"result": "Account has been created successfully"});
+    res.send({success: true,"result": "Account has been created successfully"}); //creating user account notification
 	} catch (error) {
 		res.send({"error":error,success: false});
 	}
@@ -68,7 +68,7 @@ app.post('/createAccount', async(req, res) => {
 		if (results === undefined || results.length == 0) {
 			createUserAccount(req, res);
 		} else {
-			res.send({success: false,result: "This user already exist"});
+			res.send({success: false,result: "This user already exist"}); //notification when user already exists
 		}
 	} catch (error) {
 		res.send({success: false,error: error});
@@ -83,7 +83,7 @@ app.post('/changePassword',(req,res)=>{
     { upsert:true, returnNewDocument : true }
 ,(err,result)=>{
   if(!result){
-    var result={success:false,result:"Invalid password"};
+    var result={success:false,result:"Invalid password"}; //notifcation when password is wrong
     res.send(result);
   }
   else
