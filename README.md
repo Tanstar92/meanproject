@@ -1,1 +1,5 @@
-# meanproject
+# meanproject 
+m
+e
+a
+n
